@@ -6,9 +6,11 @@ pipeline {
     stages {
         stage('Hello deploy') {
             when {
-                true
+                expression { true }
             }
-            echo 'ok'
+            steps {
+                echo 'ok'
+            }
         }
     }
 }
