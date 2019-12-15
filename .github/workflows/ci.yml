@@ -8,8 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: |
-          env
-          which cargo
-          which kubectl
-          id
+      - run: env
+      - run: which cargo
+      - run: which kubectl
+      - run: id
