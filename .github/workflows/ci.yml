@@ -8,7 +8,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: env
-      - run: which cargo
-      - run: which kubectl
-      - run: id
+      - run: which rustup
+      - run: cargo --version
+      - run: rustup component list --installed
