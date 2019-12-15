@@ -1,0 +1,16 @@
+name: CI
+
+on:
+  - push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/bin
+        run: |
+          env
+          which cargo
+          which kubectl
+          id
