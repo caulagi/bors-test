@@ -11,3 +11,4 @@ jobs:
       - run: which rustup
       - run: cargo --version
       - run: rustup component list --installed
+      - run: skaffold version
