@@ -9,6 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: which rustup
+      - run: rustc -V
       - run: cargo --version
       - run: rustup component list --installed
       - run: go version
