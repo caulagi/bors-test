@@ -13,5 +13,9 @@ jobs:
       - run: cargo --version
       - run: rustup component list --installed
       - run: go version
-      - run: make -v
+      - run: curl -Lo helm.tar.gz https://get.helm.sh/helm-v3.1.0-linux-amd64.tar.gz
+      - run: tar xvf helm.tar.gz
+      - run: sudo mv linux-amd64/helm /usr/local/bin
       - run: helm version
+      - run: make -v
+      - run: make e2e
