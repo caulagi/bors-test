@@ -13,3 +13,4 @@ jobs:
       - run: cargo --version
       - run: rustup component list --installed
       - run: go version
+      - run: make -v
