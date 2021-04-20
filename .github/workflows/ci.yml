@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: echo "COMMIT_SHORT_SHA=$(sh git rev-parse --short HEAD)" >> $GITHUB_ENV
+      - run: echo "COMMIT_SHORT_SHA=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
       # - run: make test
       # - run: make bootstrap
       # - run: make e2e
