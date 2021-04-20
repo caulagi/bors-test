@@ -8,10 +8,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: which rustup
-      - run: rustc -V
-      - run: cargo --version
-      - run: rustup component list --installed
-      - run: go version
-      - run: make -v
-      - run: helm version
+      - run: make test
+      - run: make bootstrap
+      - run: make e2e

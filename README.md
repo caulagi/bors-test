@@ -1,3 +1,3 @@
 # bors-test
 
-test repo to try out small/random ideas
+Test repo to try out small/random ideas
