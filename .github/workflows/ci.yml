@@ -16,4 +16,4 @@ jobs:
       # - run: make bootstrap
       # - run: make e2e
       - run: echo ${{ env.COMMIT_SHORT_SHA }}
-      - run: echo ${{ github.event }}
+      - uses: crazy-max/ghaction-dump-context@v1
