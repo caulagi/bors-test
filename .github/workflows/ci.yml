@@ -13,10 +13,12 @@ jobs:
         run: echo "::set-output name=tag::$(echo $GITHUB_SHA | cut -c 1-8)"
   build:
     runs-on: ubuntu-latest
+    needs:
+      - vars
     steps:
       - uses: actions/checkout@v2
       - run: echo "COMMIT_SHORT_SHA=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
-      - run: echo "${{ jobs.vars.outputs.tag}}"
+      - run: echo "${{ needs.vars.outputs.tag}}"
       # - run: make test
       # - run: make bootstrap
       # - run: make e2e
