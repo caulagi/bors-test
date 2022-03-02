@@ -13,7 +13,8 @@ jobs:
       # - run: make bootstrap
       # - run: make e2e
       - run: go version
-      - run: GO111MODULE=on go get github.com/mikefarah/yq/v4
-      - run: PATH=$(go env GOPATH)/bin:$PATH yq -i '.metadata[0].name = "test"' nginx-test.yaml
+      - run: GO111MODULE=on go get github.com/mikefarah/yq/v3
+      - run: PATH=$(go env GOPATH)/bin:$PATH yq write -i nginx-test.yaml metadata.name test
+      - run: cat nginx-test.yaml
       - run: echo ${{ env.COMMIT_SHORT_SHA }}
       - uses: crazy-max/ghaction-dump-context@v1
